@@ -1,12 +1,7 @@
 ## Customize this file after creating the new REPO and remove this lines.
 What to adjust:  
-* Add the your project or repo name direct under the logo.
-* Add a short and long desciption.
+
 * Add links for your final repo to report a bug or request a feature.
-* Add list of used technologies.
-* If you have, add a roadmap or remove this section.
-* Fill up the section for set up and documentation.
- * Start in this file only with documentation and link to the docs folder.
 * Add project shields. Use [shields.io](https://shields.io/)
 
 ## ------- end to remove -------
@@ -23,10 +18,10 @@ What to adjust:
     <img src="/images/logo.png" alt="Logo" height="200">
   </a>
 
-<h3 align="center">DigiWF <i>repo or project name</i></h3>
+<h3 align="center">DigiWF <i>Taskana Camunda Connector</i></h3>
 
   <p align="center">
-    <i>Add a here a short description</i>
+    <i>This code connects the task service and Camunda process engine.</i>
     <br /><a href="#">Report Bug</a>
     ·
     <a href="#">Request Feature</a>
@@ -36,36 +31,50 @@ What to adjust:
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-*Add a description from your project here.*
+This is a small helper service to get a communication between process engine und Taskana-Main-Service.
+
 <p align="right">(<a href="#top">back to top</a>)</p>
-
-
 
 ### Built With
 
 The documentation project is built with technologies we use in our projects:
 
-* *write here the list of used technologies*
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-<!-- ROADMAP -->
-## Roadmap
-
-*if you have a ROADMAP for your project add this here*
-
-
-See the [open issues](#) for a full list of proposed features (and known issues).
+* Spring boot
+* Taskana
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ## Set up
-*how can i start and fly this project*
+
+Build the project in your idea or via cmd line:   
+``./mvnw clean install``
+
+Start via mvn:  
+``./mvnw spring-boot:run``
+
+If you need to change some settings. Look in the ``application.properties`` or ``taskana.properties`` file under ``src/main/resources``
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ## Documentation
-*what insights do you have to tell*
+
+To set up the demo process engine. Create a list of environment variables and fill them with the necessary data.  
+A list of them and with example data you can find here:
+```
+TASKANA_DB_HOST=localhost
+TASKANA_DB_PORT=5432
+TASKANA_DB_NAME=digiwf-process-engine
+TASKANA_DB_USER=postgres
+TASKANA_DB_PASSWORD=password
+CAMUNDA_REST_USER=demo
+CAMUNDA_REST_PASSWORD=demo
+CAM_TASKANA_OUTBOX_REST_USER=demo
+CAM_TASKANA_OUTBOX_REST_PASSWORD=demo
+CAMUNDA_HOST_PORT=localhost:8090
+```
+
+You can create this variables in a `.env` file. For *nix users add before every line `export` and add a space. For windows user add a `set ` for every line.  
+*nix user can then do `source .env` to load the environment variables.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
